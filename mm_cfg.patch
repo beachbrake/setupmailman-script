@@ -1,0 +1,26 @@
+=== modified file 'Mailman/mm_cfg.py'
+--- Mailman/mm_cfg.py	2010-02-01 00:05:49 +0000
++++ Mailman/mm_cfg.py	2010-04-14 15:53:37 +0000
+@@ -41,8 +41,22 @@
+ from Defaults import *
+
+ ##################################################
++
++#-------------------------------------------------------------------------------
++# Beachbrake specific settings
++import sys
++# Add extra path for python modules (Ubuntu 9.04+ only)
++sys.path.append("/usr/lib/python2.6/dist-packages")
++sys.path.append("/usr/lib/pymodules/python2.6")
++
++#For testing purposes, delete when moved into production
++DEFAULT_EMAIL_HOST = 'localhost.localdomain'
++DEFAULT_URL_HOST = 'localhost.localdomain'
++add_virtualhost(DEFAULT_URL_HOST, DEFAULT_EMAIL_HOST)
++#-------------------------------------------------------------------------------
++
+ # Put YOUR site-specific settings below this line.
+-MTA = 'Postfix'
++# MTA = 'Postfix'
+ MAILMAN_SITE_LIST = 'systers-admin'
+ PENDING_REQUEST_LIFE = days(30)

@@ -1,0 +1,20 @@
+README
+For best results, run this script on a fresh Ubuntu install.
+
+Run this script as root:
+
+$ chmod +x setupmailman.sh
+$ sudo ./setupmailman.sh
+
+
+This is almost completely unattended. You just have to do the following:
+When postfix and mailman are done installing it will prompt for some settings.
+
+In postfix 1st screen, press ok.
+Now select "Internet Site".
+Type localhost.localdomain in the text box prompted next.
+For mailman, press ok.
+Choose "en" as the language.
+
+You don't need to do anything after that. If all worked fine. 
+The mailman system should be up and running.
